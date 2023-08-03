@@ -1,0 +1,17 @@
+groups:
+- name: my_alerts
+  rules:
+  # - alert: TesteArgosCounter
+  #   expr: rate(teste_argos_counter_total[10s]) > 1
+  #   for: 0m
+  #   labels:
+  #     severity: warning
+  #   annotations:
+  #     description: Teste Argos Counter
+  - alert: TesteArgosCounterIncrease
+    expr: increase(teste_argos_counter_total[30s]) > 1
+    for: 0m
+    labels:
+      severity: warning
+    annotations:
+      description: Teste Argos Counter Increase
